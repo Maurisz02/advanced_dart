@@ -1,6 +1,9 @@
+import 'package:advanced_dart/mixins.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:developer' as devtools show log;
+
+// abstarct class first video
 
 extension Log on Object {
   void log() => devtools.log(toString());
@@ -29,13 +32,13 @@ abstract class CanRun {
   } */
 
   void run() {
-    "Runing...".log();
+    // "Runing...".log();
   }
 }
 
 abstract class CanWalk {
   void walk() {
-    'Walking...'.log();
+    //'Walking...'.log();
   }
 }
 
@@ -114,30 +117,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    testIt();
+    //testIt();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      body: const Mixins(),
     );
   }
 }
